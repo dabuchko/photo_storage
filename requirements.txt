@@ -1,0 +1,15 @@
+torch
+torchvision
+keras
+argparse
+datetime
+flask
+timm
+itsdangerous
+mysql-connector-python
+open_clip_torch
+transformers
+datasets==2.21.0
+tokenizers
+pillow
+waitress

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module main</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">main</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="../main.py">photo_storage/backend/main.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="argparse.html">argparse</a><br>
+<a href="hashlib.html">hashlib</a><br>
+</td><td class="multicolumn"><a href="os.html">os</a><br>
+<a href="random.html">random</a><br>
+</td><td class="multicolumn"><a href="re.html">re</a><br>
+<a href="sqlite3.html">sqlite3</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-add_cors_headers"><strong>add_cors_headers</strong></a>(response)</dt><dd><span class="code">Sets&nbsp;CORS&nbsp;policy&nbsp;to&nbsp;allow&nbsp;requests&nbsp;from&nbsp;any&nbsp;source.</span></dd></dl>
+ <dl><dt><a name="-bad_request"><strong>bad_request</strong></a>(error: str)</dt><dd><span class="code">In&nbsp;case&nbsp;of&nbsp;a&nbsp;400&nbsp;error,&nbsp;return&nbsp;a&nbsp;JSON&nbsp;description&nbsp;of&nbsp;the&nbsp;error.</span></dd></dl>
+ <dl><dt><a name="-check_authentication"><strong>check_authentication</strong></a>()</dt><dd><span class="code">Checks&nbsp;if&nbsp;the&nbsp;user&nbsp;is&nbsp;authenticated&nbsp;by&nbsp;verifying&nbsp;the&nbsp;token.</span></dd></dl>
+ <dl><dt><a name="-close_db"><strong>close_db</strong></a>(exception)</dt><dd><span class="code">Closes&nbsp;the&nbsp;database&nbsp;again&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;request.</span></dd></dl>
+ <dl><dt><a name="-create_album"><strong>create_album</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;creating&nbsp;a&nbsp;new&nbsp;album.</span></dd></dl>
+ <dl><dt><a name="-delete_album"><strong>delete_album</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;deleting&nbsp;an&nbsp;album.</span></dd></dl>
+ <dl><dt><a name="-delete_photo"><strong>delete_photo</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;deleting&nbsp;a&nbsp;photo.</span></dd></dl>
+ <dl><dt><a name="-delete_user"><strong>delete_user</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;deleting&nbsp;user&nbsp;account.</span></dd></dl>
+ <dl><dt><a name="-generate_auth_token"><strong>generate_auth_token</strong></a>(user_id)</dt><dd><span class="code">Generates&nbsp;a&nbsp;signed&nbsp;token&nbsp;for&nbsp;the&nbsp;user.</span></dd></dl>
+ <dl><dt><a name="-get_albums"><strong>get_albums</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;getting&nbsp;all&nbsp;albums&nbsp;of&nbsp;the&nbsp;current&nbsp;user.</span></dd></dl>
+ <dl><dt><a name="-get_db"><strong>get_db</strong></a>()</dt><dd><span class="code">Opens&nbsp;a&nbsp;new&nbsp;database&nbsp;connection&nbsp;if&nbsp;there&nbsp;is&nbsp;none&nbsp;yet&nbsp;for&nbsp;the&nbsp;current&nbsp;application&nbsp;context.</span></dd></dl>
+ <dl><dt><a name="-get_image"><strong>get_image</strong></a>(id)</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;retrieving&nbsp;image&nbsp;content&nbsp;by&nbsp;ID.</span></dd></dl>
+ <dl><dt><a name="-get_photo_metadata"><strong>get_photo_metadata</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;getting&nbsp;metadata&nbsp;of&nbsp;an&nbsp;array&nbsp;of&nbsp;photos.</span></dd></dl>
+ <dl><dt><a name="-get_photos"><strong>get_photos</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;getting&nbsp;50&nbsp;photos&nbsp;from&nbsp;an&nbsp;album.</span></dd></dl>
+ <dl><dt><a name="-login"><strong>login</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;user&nbsp;login.</span></dd></dl>
+ <dl><dt><a name="-not_authorized"><strong>not_authorized</strong></a>(valid: bool)</dt><dd><span class="code">In&nbsp;case&nbsp;of&nbsp;a&nbsp;401&nbsp;error,&nbsp;return&nbsp;a&nbsp;JSON&nbsp;description&nbsp;of&nbsp;the&nbsp;error&nbsp;with&nbsp;authentication&nbsp;status.</span></dd></dl>
+ <dl><dt><a name="-not_found"><strong>not_found</strong></a>(error)</dt><dd><span class="code">In&nbsp;case&nbsp;of&nbsp;a&nbsp;404&nbsp;error,&nbsp;return&nbsp;a&nbsp;JSON&nbsp;description&nbsp;of&nbsp;the&nbsp;error.</span></dd></dl>
+ <dl><dt><a name="-search_photos"><strong>search_photos</strong></a>(query)</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;searching&nbsp;top&nbsp;50&nbsp;photos&nbsp;by&nbsp;caption&nbsp;with&nbsp;the&nbsp;given&nbsp;offset.</span></dd></dl>
+ <dl><dt><a name="-signup"><strong>signup</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;user&nbsp;registration.</span></dd></dl>
+ <dl><dt><a name="-update_album"><strong>update_album</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;updating&nbsp;an&nbsp;album&nbsp;name.</span></dd></dl>
+ <dl><dt><a name="-update_photo"><strong>update_photo</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;updating&nbsp;a&nbsp;photo's&nbsp;caption.</span></dd></dl>
+ <dl><dt><a name="-update_user"><strong>update_user</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;updating&nbsp;user&nbsp;information.</span></dd></dl>
+ <dl><dt><a name="-upload_photo"><strong>upload_photo</strong></a>()</dt><dd><span class="code">Endpoint&nbsp;for&nbsp;uploading&nbsp;a&nbsp;photo.</span></dd></dl>
+ <dl><dt><a name="-verify_auth_token"><strong>verify_auth_token</strong></a>(token)</dt><dd><span class="code">Verifies&nbsp;the&nbsp;signed&nbsp;token&nbsp;and&nbsp;returns&nbsp;the&nbsp;user&nbsp;ID.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>IMAGE_TO_TEXT_MODEL</strong> = &lt;predict.ImageToTextPredict object&gt;<br>
+<strong>SUPPORTED_EXTENSIONS</strong> = ['jpg', 'jpeg', 'png', 'webp', 'gif']<br>
+<strong>app</strong> = &lt;Flask 'main'&gt;<br>
+<strong>args</strong> = Namespace(host=None, port=None, debug=False, dat...l_path='model.pt', album_matching_threshold=0.15)<br>
+<strong>g</strong> = &lt;LocalProxy unbound&gt;<br>
+<strong>parser</strong> = ArgumentParser(prog='', usage=None, description=...atter'&gt;, conflict_handler='error', add_help=True)<br>
+<strong>request</strong> = &lt;LocalProxy unbound&gt;<br>
+<strong>serializer</strong> = &lt;itsdangerous.url_safe.URLSafeTimedSerializer object&gt;</td></tr></table>
+</body></html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module predict</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">predict</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="../main.py">photo_storage/backend/main.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="PIL.Image.html">PIL.Image</a><br>
+</td><td class="multicolumn"><a href="open_clip.html">open_clip</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"><a href="torch.html">torch</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="predict.html#ImageToTextPredict">ImageToTextPredict</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ImageToTextPredict">class <strong>ImageToTextPredict</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ImageToTextPredict">ImageToTextPredict</a>(model_path='model.pt',&nbsp;album_matching_threshold=0.2)<br>
+&nbsp;<br>
+Class&nbsp;responsible&nbsp;for&nbsp;predicting&nbsp;the&nbsp;caption&nbsp;of&nbsp;the&nbsp;passed&nbsp;image&nbsp;and&nbsp;detect<br>
+the&nbsp;most&nbsp;appropriate&nbsp;album&nbsp;name&nbsp;that&nbsp;would&nbsp;math&nbsp;the&nbsp;passed&nbsp;image.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="ImageToTextPredict-__init__"><strong>__init__</strong></a>(self, model_path='model.pt', album_matching_threshold=0.2)</dt><dd><span class="code">Initializes&nbsp;the&nbsp;<a href="#ImageToTextPredict">ImageToTextPredict</a>&nbsp;class.&nbsp;Loads&nbsp;the&nbsp;required&nbsp;models,<br>
+tokenizers&nbsp;for&nbsp;them,&nbsp;and&nbsp;sets&nbsp;the&nbsp;threshold&nbsp;for&nbsp;album&nbsp;matching.<br>
+:param&nbsp;str&nbsp;model_path:&nbsp;The&nbsp;path&nbsp;to&nbsp;the&nbsp;image&nbsp;captioning&nbsp;model&nbsp;of&nbsp;ImageToTextModel&nbsp;class.<br>
+:param&nbsp;float&nbsp;album_matching_threshold:&nbsp;The&nbsp;minimum&nbsp;cosine&nbsp;similarity&nbsp;that&nbsp;should<br>
+be&nbsp;satisfied&nbsp;between&nbsp;image&nbsp;embedding&nbsp;and&nbsp;album&nbsp;name&nbsp;embedding&nbsp;to&nbsp;classify&nbsp;the&nbsp;image.<br>
+If&nbsp;all&nbsp;cosine&nbsp;similarities&nbsp;are&nbsp;below&nbsp;the&nbsp;threshold,&nbsp;the&nbsp;image&nbsp;will&nbsp;not&nbsp;be&nbsp;classified<br>
+to&nbsp;match&nbsp;any&nbsp;album.</span></dd></dl>
+
+<dl><dt><a name="ImageToTextPredict-predict"><strong>predict</strong></a>(self, image_path: str, albums: list[str]) -&gt; tuple[str, int]</dt><dd><span class="code">Generates&nbsp;a&nbsp;caption&nbsp;for&nbsp;the&nbsp;given&nbsp;image&nbsp;and&nbsp;classifies&nbsp;image&nbsp;among&nbsp;provided&nbsp;albums.<br>
+Return&nbsp;a&nbsp;tuple&nbsp;of&nbsp;text&nbsp;description&nbsp;and&nbsp;index&nbsp;of&nbsp;the&nbsp;album&nbsp;in&nbsp;the&nbsp;provided&nbsp;album&nbsp;list<br>
+"albums"&nbsp;that&nbsp;is&nbsp;the&nbsp;most&nbsp;suitable&nbsp;for&nbsp;the&nbsp;provided&nbsp;image.&nbsp;If&nbsp;no&nbsp;album&nbsp;name&nbsp;matches<br>
+image&nbsp;close&nbsp;enough&nbsp;(does&nbsp;not&nbsp;surpass&nbsp;album&nbsp;matching&nbsp;threshold),&nbsp;index&nbsp;-1&nbsp;will&nbsp;be&nbsp;returned,<br>
+same&nbsp;will&nbsp;happen&nbsp;if&nbsp;empty&nbsp;list&nbsp;of&nbsp;albums&nbsp;was&nbsp;provided.<br>
+:param&nbsp;str&nbsp;image_path:&nbsp;Path&nbsp;to&nbsp;the&nbsp;image&nbsp;for&nbsp;which&nbsp;caption&nbsp;should&nbsp;be&nbsp;generated&nbsp;and<br>
+which&nbsp;should&nbsp;be&nbsp;classified&nbsp;among&nbsp;albums.&nbsp;The&nbsp;path&nbsp;should&nbsp;be&nbsp;relative&nbsp;with&nbsp;respect&nbsp;to<br>
+current&nbsp;working&nbsp;directory.<br>
+:param&nbsp;list[str]&nbsp;albums:&nbsp;List&nbsp;of&nbsp;album&nbsp;names&nbsp;among&nbsp;which&nbsp;the&nbsp;image&nbsp;must&nbsp;be&nbsp;classified.<br>
+:return:&nbsp;Tuple&nbsp;where&nbsp;first&nbsp;member&nbsp;is&nbsp;a&nbsp;generated&nbsp;text&nbsp;caption&nbsp;for&nbsp;the&nbsp;provided&nbsp;image,<br>
+and&nbsp;second&nbsp;member&nbsp;is&nbsp;an&nbsp;index&nbsp;of&nbsp;the&nbsp;album&nbsp;that&nbsp;is&nbsp;the&nbsp;most&nbsp;suitable&nbsp;for&nbsp;the&nbsp;provided<br>
+image,&nbsp;-1&nbsp;is&nbsp;returned&nbsp;as&nbsp;index&nbsp;if&nbsp;no&nbsp;album&nbsp;is&nbsp;suitable&nbsp;enough&nbsp;(i.e.&nbsp;none&nbsp;of&nbsp;the<br>
+provided&nbsp;albums&nbsp;surpasses&nbsp;the&nbsp;album_matching_threshold&nbsp;set&nbsp;during&nbsp;the&nbsp;initialization&nbsp;of&nbsp;this&nbsp;class).<br>
+:rtype:&nbsp;tuple[str,&nbsp;int]</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

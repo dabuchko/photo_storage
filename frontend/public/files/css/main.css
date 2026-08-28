@@ -1,0 +1,49 @@
+a {
+    /* Setting cursor of every link to pointer regardless of whether it has
+    href attribute or not. */
+    cursor: pointer;
+}
+
+.picture_background {
+    /* Sets a prepared picture as a background covering whole screen. */
+    background: url(/files/img/background.jpg);
+    background-size: cover;
+}
+
+.white_transperent {
+    /* Transparent white background. */
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.black_cover {
+    /* Partially transparent black block of screen size */
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: #000000b0;
+    left: 0;
+    top: 0;
+}
+
+
+.loading_dots {
+    /* Animated black dots for showing loading. */
+    width: 60px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+    background: 
+        var(--_g) 0%   50%,
+        var(--_g) 50%  50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100%/3) 50%;
+    animation: loading_animation 1s infinite linear;
+    margin: auto;
+}
+
+@keyframes loading_animation {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
